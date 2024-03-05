@@ -2,7 +2,7 @@
   "pluginType": "SAAS",
   "pluginId": "google-sheets-plugin",
   "unpublishedAction": {
-    "name": "SelectQuery",
+    "name": "UpdateQuery",
     "datasource": {
       "name": "few",
       "pluginId": "google-sheets-plugin",
@@ -13,7 +13,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Sheet13",
+    "pageId": "testme",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -22,7 +22,7 @@
       "pluginSpecifiedTemplates": [
         {
           "key": "method",
-          "value": "GET"
+          "value": "UPDATE"
         },
         {
           "key": "sheetUrl",
@@ -46,7 +46,7 @@
         },
         {
           "key": "rowLimit",
-          "value": "{{data_table.pageSize}}"
+          "value": ""
         },
         {
           "key": "sheetName",
@@ -54,10 +54,11 @@
         },
         {
           "key": "rowOffset",
-          "value": "{{(data_table.pageNo - 1) * data_table.pageSize}}"
+          "value": ""
         },
         {
-          "key": "rowObject"
+          "key": "rowObject",
+          "value": "{{\n\t{\n\t\t...update_form.formData, \n\t\trowIndex:data_table.selectedRow.rowIndex\n\t}\n}}"
         },
         {
           "key": "rowObjects"
@@ -72,36 +73,19 @@
         },
         {
           "key": "smartSubstitution",
-          "value": false
-        },
-        {
-          "key": "where",
-          "value": [
-            {}
-          ]
+          "value": true
         }
       ],
       "formData": {
         "command": {
-          "data": "FETCH_MANY",
+          "data": "UPDATE_ONE",
           "viewType": "component",
-          "componentData": "FETCH_MANY"
+          "componentData": "UPDATE_ONE"
         },
         "entityType": {
           "data": "ROWS",
           "viewType": "component",
           "componentData": "ROWS"
-        },
-        "pagination": {
-          "data": {
-            "offset": "{{(data_table.pageNo - 1) * data_table.pageSize}}",
-            "limit": "{{data_table.pageSize}}"
-          },
-          "viewType": "component",
-          "componentData": {
-            "offset": "{{(data_table.pageNo - 1) * data_table.pageSize}}",
-            "limit": "{{data_table.pageSize}}"
-          }
         },
         "projection": {
           "data": []
@@ -114,6 +98,11 @@
         "range": {
           "data": ""
         },
+        "rowObjects": {
+          "data": "{{\n\t{\n\t\t...update_form.formData, \n\t\trowIndex:data_table.selectedRow.rowIndex\n\t}\n}}",
+          "viewType": "component",
+          "componentData": "{{\n\t{\n\t\t...update_form.formData, \n\t\trowIndex:data_table.selectedRow.rowIndex\n\t}\n}}"
+        },
         "sheetName": {
           "data": "Sheet1",
           "viewType": "component",
@@ -125,56 +114,32 @@
           "componentData": "https://docs.google.com/spreadsheets/d/1P6or_F8UZ9sJX3JRAsX_kQDMRRnXqrnRgRIiml8Gjl0/edit"
         },
         "smartSubstitution": {
-          "data": false,
+          "data": true,
           "viewType": "component",
-          "componentData": false
-        },
-        "sortBy": {
-          "data": [
-            {
-              "column": "",
-              "order": "Ascending"
-            }
-          ]
+          "componentData": true
         },
         "tableHeaderIndex": {
           "data": "1",
           "viewType": "component",
           "componentData": "1"
-        },
-        "where": {
-          "data": {
-            "condition": "AND",
-            "children": [
-              {}
-            ]
-          },
-          "viewType": "component",
-          "componentData": {
-            "condition": "AND",
-            "children": [
-              {}
-            ]
-          }
         }
       }
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "(data_table.pageNo - 1) * data_table.pageSize",
-      "data_table.pageSize"
+      "\n\t{\n\t\t...update_form.formData, \n\t\trowIndex:data_table.selectedRow.rowIndex\n\t}\n"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
     "createdAt": "2024-03-05T08:17:21Z"
   },
-  "id": "Sheet13_SelectQuery",
+  "id": "testme_UpdateQuery",
   "deleted": false,
-  "gitSyncId": "65e6d0eec51e3368a2903d53_65e6d511c7844822c1590a44"
+  "gitSyncId": "65e6d0eec51e3368a2903d53_65e6d511c7844822c1590a45"
 }
