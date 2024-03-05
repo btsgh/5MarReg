@@ -2,6 +2,7 @@
   "unpublishedPage": {
     "name": "Shadab_Page1",
     "slug": "shadab-page1",
+    "customSlug": "",
     "layouts": [
       {
         "viewMode": false,
