@@ -1,0 +1,57 @@
+{
+  "unpublishedPage": {
+    "name": "Page3",
+    "slug": "page3",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 380,
+          "containerStyle": "none",
+          "snapRows": 65,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 89,
+          "minHeight": 670,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Page3_Testing_the_JS_object.myFun1",
+              "name": "Testing_the_JS_object.myFun1",
+              "collectionId": "Page3_Testing_the_JS_object",
+              "clientSideExecution": true,
+              "confirmBeforeExecute": true,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "function () {\n  setInterval(() => {\n    showAlert(\"Hi\", \"success\");\n  }, 2000, \"Int3\");\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Page3",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": []
+  },
+  "deleted": false,
+  "gitSyncId": "65e6ab882e25490036bbdc57_65e6c89dc51e3368a2903c9d"
+}
